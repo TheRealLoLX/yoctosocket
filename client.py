@@ -26,12 +26,14 @@ def start_client(host='127.0.0.1', port=65432, buffer_size=1024):
                     received_data += packet
                 deserialized_data = pickle.loads(received_data)
                 deserialized_data = json.loads(deserialized_data)
-                image_data = base64.b64decode(deserialized_data["message"])
-                image_name = deserialized_data["name"]
+                image_data = base64.b64decode(deserialized_data["image"])
                 image_array = np.frombuffer(image_data, dtype=np.uint8)
                 image = cv2.imdecode(image_array, cv2.IMREAD_COLOR) 
                 if image is not None:
-                    cv2.imshow('image_name', image)
+                    flipped_image = cv2.flip(image, 1)
+                    cv2.imshow("image_name", flipped_image)
+                    
+                    print(deserialized_data["gesture"])
                     cv2.waitKey(1)
             except Exception as e:
                 print(f"Error: {e}")
