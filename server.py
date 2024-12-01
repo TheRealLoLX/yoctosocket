@@ -8,7 +8,7 @@ import time
 import cv2
 import base64
 
-def start_server(host='127.0.0.1', port=65432):
+def start_server(host='192.168.1.129', port=65432):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))
     server_socket.listen(1)
@@ -45,13 +45,30 @@ def start_server(host='127.0.0.1', port=65432):
 
             _, buffer = cv2.imencode('.jpg', frame)
             image_base64 = base64.b64encode(buffer).decode('utf-8')
+
             data = {"image": image_base64, "gesture": gesture}
             json_data = json.dumps(data)
             serialized_data = pickle.dumps(json_data)
+
             data_size = len(serialized_data)
-            conn.sendall(pickle.dumps(data_size))
-            conn.sendall(serialized_data)
-            time.sleep(60/1000)
+            size = {"size": data_size}
+            json_size = json.dumps(size)
+            serialized_size = pickle.dumps(json_size)
+
+            conn.sendall(serialized_size)
+            ack_size = json.loads(pickle.loads(conn.recv(1024)))
+            
+            if ack_size['size'] == 'ACK SIZE':
+                print("SIZE received")
+                conn.sendall(serialized_data)
+                ack_data = json.loads(pickle.loads(conn.recv(1024)))
+                if ack_data['message'] == 'ACK DATA':
+                    print("DATA received")
+                else:
+                    conn.sendall(serialized_data)
+            else:
+                conn.sendall(pickle.dumps(data_size))
+            time.sleep(1)
       
     except Exception as e:
         print(f"Error: {e}")
