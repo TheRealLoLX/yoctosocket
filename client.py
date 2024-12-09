@@ -58,7 +58,3 @@ def start_client(host='192.168.1.129', port=65432, buffer_size=1024):
 
 if __name__ == "__main__":
     start_client()
-
-
-
-    
