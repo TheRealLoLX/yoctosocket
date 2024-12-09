@@ -19,3 +19,6 @@
 ### ssid and psk
 #### vi /etc/wpa_supplicant.conf
 #### wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+
+### Test
+/yoctosocket/20241209_030617.jpg
