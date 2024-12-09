@@ -21,6 +21,9 @@
 #### wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
 
 ### Test
+#### Open Palm
 ![20241209_030617](https://github.com/user-attachments/assets/4b11e66b-eee4-4e2a-b7a5-c7186a8aa948)
+#### Victory
 ![20241209_030702](https://github.com/user-attachments/assets/9632f865-b41d-4c35-8a71-d4b3644fd599)
+#### Fist
 ![20241209_030711](https://github.com/user-attachments/assets/f60406c5-b431-4dce-9fa2-db016f21a6bd)
