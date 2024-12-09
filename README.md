@@ -20,10 +20,16 @@
 #### vi /etc/wpa_supplicant.conf
 #### wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
 
+## Hotspot
+### don't forget to disable firewall of PC
+
 ## Test
 #### Open Palm
-![20241209_030617](https://github.com/user-attachments/assets/4b11e66b-eee4-4e2a-b7a5-c7186a8aa948)
-#### Victory
-![20241209_030702](https://github.com/user-attachments/assets/9632f865-b41d-4c35-8a71-d4b3644fd599)
+![20241209_130129](https://github.com/user-attachments/assets/781a0f70-8e30-4802-8f32-dd87f1b6a0ac)
+
+#### Thumb up
+![20241209_130132](https://github.com/user-attachments/assets/95ade000-c609-4d99-ab15-8d4b5f210e56)
+
 #### Fist
-![20241209_030711](https://github.com/user-attachments/assets/f60406c5-b431-4dce-9fa2-db016f21a6bd)
+![20241209_130137](https://github.com/user-attachments/assets/f603be26-d238-4217-bc06-26cf1381132d)
+
